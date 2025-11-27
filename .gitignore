@@ -1,0 +1,5 @@
+downloaded_invoices_ksef/
+invoices_to_send_ksef/
+logs/
+__pycache__/
+.env
