@@ -1,10 +1,10 @@
-# KSeF Client - testy obsługi Krajowego Systemu e-Faktur - Środowisko testowe
+# KSeF Client - Obsługa Krajowego Systemu e-Faktur - Środowisko testowe/przedprodukcyjne
 
 Projekt do komunikacji z API Krajowego Systemu e-Faktur (KSeF) umożliwiająca wysyłkę, pobieranie i wyszukiwanie faktur elektronicznych.
 
 ## Wymagania
 
-- Konto w systemie KSeF testowe
+- Konto w systemie KSeF - testowe/przedprodukcyjne
 - Token autoryzacyjny KSeF
 - NIP podmiotu
 
@@ -17,9 +17,9 @@ pip install -r requirements.txt
 
 Utwórz plik `.env`:
 ```env
-KSEF_NIP=1234567890
+KSEF_NIP=twoj_nip
 KSEF_TOKEN=twoj_token_ksef
-KSEF_ENV=test
+KSEF_ENV=test/demo
 KSEF_RATE_LIMIT=10
 ```
 
