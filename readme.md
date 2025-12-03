@@ -33,7 +33,7 @@ python main.py send-batch --directory invoices_directory
 
 ### Pobieranie faktur
 ```bash
-python main.py search-download --date-from 2025-11-01T00:00:00.000+00:00 --date-to 2025-11-30T23:59:59.999+00:00
+python main.py search-download --date-from 2025-11-01 --date-to 2025-11-30
 python main.py download-single KSEF_NUMBER
 ```
 
