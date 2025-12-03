@@ -15,14 +15,17 @@ from ksef.operations import (
 
 def search_and_download(client: KSeFClient, date_from: str, date_to: str):
 
-    print(f"Searching invoices from {date_from} to {date_to}...")
+    date_from_ksef = f"{date_str_from}T00:00:00.000+00:00"
+    date_to_ksef = f"{date_str_to}T23:59:59.999+00:00"
+
+    print(f"Searching invoices from {date_from_ksef} to {date_to_ksef}...")
 
     invoices = search_invoices_from_ksef(
         client=client,
         subject_type="Subject1",
         date_type="PermanentStorage",
-        date_from=date_from,
-        date_to=date_to,
+        date_from=date_from_ksef,
+        date_to=date_to_ksef,
         page_size=20,
         sort_order="Desc",
     )
@@ -90,14 +93,14 @@ def main():
     parser_search_download.add_argument(
         "--date-from",
         type=str,
-        default="2025-11-01T00:00:00.000+00:00",
-        help="Start date for the search (e.g., 2025-11-01T00:00:00.000+00:00).",
+        default="2025-11-01",
+        help="Start date for the search (e.g., 2025-11-01).",
     )
     parser_search_download.add_argument(
         "--date-to",
         type=str,
-        default="2025-11-30T23:59:59.999+00:00",
-        help="End date for the search (e.g., 2025-11-30T23:59:59.999+00:00).",
+        default="2025-11-30",
+        help="End date for the search (e.g., 2025-11-30).",
     )
 
     parser_download_single = subparsers.add_parser(
