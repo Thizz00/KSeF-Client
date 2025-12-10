@@ -32,11 +32,32 @@ python main.py send-batch --directory invoices_directory
 ```
 
 ### Pobieranie faktur
+
 ```bash
 python main.py search-download --date-from 2025-11-01 --date-to 2025-11-30
 python main.py download-single KSEF_NUMBER
 ```
 
+Podczas wyszukiwania faktur na podstawie określonych interwałów dat, kluczowe jest ustawienie parametru **`subject_type`**. Definiuje on, jakiego rodzaju faktury mają zostać pobrane, bazując na roli podmiotu.
+
+| Wartość `subject_type` | Opis |
+| :--- | :--- |
+| **`Subject1`** | **Faktury Sprzedażowe** (wystawione przez Podmiot 1) |
+| **`Subject2`** | **Faktury Zakupowe** (wystawione dla Podmiot 2) |
+| **`Subject3`** | **Faktury Podmiotu Innego** (np. podmiotu trzeciego) |
+| **`SubjectAuthorized`** | **Faktury Podmiotu Upoważnionego** |
+
+```bash
+invoices = search_invoices_from_ksef(
+        client=client,
+        subject_type="Subject1", <-- ustaw
+        date_type="PermanentStorage",
+        date_from=date_from_ksef,
+        date_to=date_to_ksef,
+        page_size=100,
+        sort_order="Desc",
+    )
+```
 
 ## Architektura
 
