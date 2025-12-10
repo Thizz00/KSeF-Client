@@ -15,8 +15,8 @@ from ksef.operations import (
 
 def search_and_download(client: KSeFClient, date_from: str, date_to: str):
 
-    date_from_ksef = f"{date_str_from}T00:00:00.000+00:00"
-    date_to_ksef = f"{date_str_to}T23:59:59.999+00:00"
+    date_from_ksef = f"{date_from}T00:00:00.000+00:00"
+    date_to_ksef = f"{date_to}T23:59:59.999+00:00"
 
     print(f"Searching invoices from {date_from_ksef} to {date_to_ksef}...")
 
@@ -26,7 +26,7 @@ def search_and_download(client: KSeFClient, date_from: str, date_to: str):
         date_type="PermanentStorage",
         date_from=date_from_ksef,
         date_to=date_to_ksef,
-        page_size=20,
+        page_size=100,
         sort_order="Desc",
     )
 
