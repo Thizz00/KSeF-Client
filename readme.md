@@ -48,9 +48,11 @@ Podczas wyszukiwania faktur na podstawie określonych interwałów dat, kluczowe
 | **`SubjectAuthorized`** | **Faktury Podmiotu Upoważnionego** |
 
 ```bash
+-- main.py
+
 invoices = search_invoices_from_ksef(
         client=client,
-        subject_type="Subject1", <-- ustaw
+        subject_type="Subject1", <-- parametr do ustawienia
         date_type="PermanentStorage",
         date_from=date_from_ksef,
         date_to=date_to_ksef,
