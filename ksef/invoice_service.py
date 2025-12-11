@@ -212,9 +212,9 @@ class InvoiceService:
     @staticmethod
     def _extract_query_params(params: Dict) -> Dict:
         return {
-            "sortOrder": params.get("sort_order", "Asc"),
+            "sortOrder": params.get("sort_order", "desc"),
             "pageOffset": params.get("page_offset", 0),
-            "pageSize": params.get("page_size", 10),
+            "pageSize": params.get("page_size", 250),
         }
 
     @staticmethod
