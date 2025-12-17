@@ -52,11 +52,10 @@ Podczas wyszukiwania faktur na podstawie określonych interwałów dat, kluczowe
 
 invoices = search_invoices_from_ksef(
         client=client,
-        subject_type="Subject1", <-- parametr do ustawienia
-        date_type="PermanentStorage",
+        subject_type="Subject2",
+        date_type="Invoicing",
         date_from=date_from_ksef,
         date_to=date_to_ksef,
-        page_size=100,
         sort_order="Desc",
     )
 ```
