@@ -24,8 +24,8 @@ class KSeFConfig:
     @staticmethod
     def _get_environments() -> Dict[str, str]:
         return {
-            "test": "https://ksef-test.mf.gov.pl/api/v2",
-            "demo": "https://ksef-demo.mf.gov.pl/api/v2",
+            "test": "https://api-test.ksef.mf.gov.pl/v2",
+            "demo": "https://api-demo.ksef.mf.gov.pl/v2",
         }
 
     def get_invoice_url(self, ksef_number: str) -> str:
