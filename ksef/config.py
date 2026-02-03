@@ -26,6 +26,7 @@ class KSeFConfig:
         return {
             "test": "https://api-test.ksef.mf.gov.pl/v2",
             "demo": "https://api-demo.ksef.mf.gov.pl/v2",
+            "prod": "https://api.ksef.mf.gov.pl/v2",
         }
 
     def get_invoice_url(self, ksef_number: str) -> str:
